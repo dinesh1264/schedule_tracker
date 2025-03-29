@@ -35,11 +35,11 @@ export const Form = () => {
     <div className="ml-20 mt-20">
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset>
-          <legend className=" font-black text-[#00cda2] text-2xl">
+          <legend className=" font-black text-[#00cda2] text-4xl title">
             Track Your Progress
           </legend>
-          <div className="flex flex-col space-y-3 py-5 w-60">
-            <label htmlFor="person">Choose a person</label>
+          <div className="flex flex-col space-y-3 py-5 w-93 text-2xl">
+            <label htmlFor="person" className="font-black">Choose a person</label>
             <select
               defaultValue={""}
               {...register("person", {
@@ -58,7 +58,7 @@ export const Form = () => {
               <p className="text-red-600">{errors.person.message}</p>
             )}
 
-            <label htmlFor="task">Enter the number of task</label>
+            <label htmlFor="task" className="font-black">Enter the number of task</label>
             <input
               {...register("task", {
                 required: "Please enter a number of task completed",
@@ -76,7 +76,7 @@ export const Form = () => {
 
             <button
               type="submit"
-              className="bg-blue-500 text-white p-2 rounded-md active:shadow-lg active:shadow-blue-300 shadow-md shadow-blue-300 hover:bg-blue-400 active:scale-95 transition-transform duration-150"
+              className="bg-blue-500 text-white font-black p-2 rounded-md active:shadow-lg active:shadow-blue-300 shadow-md shadow-blue-300 hover:bg-blue-400 active:scale-95 transition-transform duration-150"
             >
               Submit
             </button>
