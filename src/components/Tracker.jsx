@@ -21,7 +21,7 @@ export const Tracker = () => {
             key={record.id}
           >
             <img
-              src={`../public/${record.person}.png`}
+              src={`/${record.person}.png`}
               alt={`${record.person} image`}
               className=" w-full h-full rounded-sm"
             />
