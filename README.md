@@ -14,5 +14,3 @@ If you are developing a production application, we recommend using TypeScript an
 =======
 # schedule_tracker
 >>>>>>> fa59815793b58257f8a81142f166e826bbe8b1b7
-#d89fc9 --> side heading
-#f35b87 --> highlighter
