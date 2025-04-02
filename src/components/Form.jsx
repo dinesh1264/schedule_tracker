@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
-import { increment, doc, getDoc, setDoc } from "firebase/firestore";
+import { increment, doc, getDoc, setDoc, arrayUnion, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
+
 
 
 export const Form = () => {
@@ -10,17 +11,26 @@ export const Form = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm({ mode: "onChange", defaultValues: { person: "", task:1}});
+  } = useForm({ mode: "onChange", defaultValues: { person: "", task:""}});
   
   const onSubmit = async (data) => {
+    data.task = data.task.toLowerCase()
     const { person,task } = data;
+    
     try {
       const docRef = doc(db, "progress", person);
       const docSnap = await getDoc(docRef);
       if(docSnap.exists()){
-        await setDoc(docRef, {task: increment(task)}, {merge:true});
+        await updateDoc(docRef, {
+          tasks: arrayUnion({task}),
+          taskCount: increment(1)
+        });
       }else{
-        await setDoc(docRef,{person, task:task});
+        await setDoc(docRef,{
+          person,
+          tasks: [{ task}],
+          taskCount: 1
+        });
       }
       reset();
       
@@ -32,7 +42,7 @@ export const Form = () => {
   console.log(errors);
 
   return (
-    <div className="ml-20 mt-20">
+    <div className="mt-30 pl-[35rem] relative">
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset>
           <legend className=" font-black text-[#00cda2] text-4xl title">
@@ -46,7 +56,7 @@ export const Form = () => {
                 required: "Please select a person",
               })}
               id="person"
-              className="bg-white text-black p-2 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none active:border-blue-600 border-2"
+              className="bg-white cursor-pointer text-black p-2 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none active:border-blue-600 border-2"
             >
               <option value="" disabled>
                 Choose a person
@@ -58,17 +68,24 @@ export const Form = () => {
               <p className="text-red-600">{errors.person.message}</p>
             )}
 
-            <label htmlFor="task" className="font-black">Enter the number of task</label>
+            <label htmlFor="task" className="font-black">Enter the task</label>
             <input
               {...register("task", {
-                required: "Please enter a number of task completed",
-                min: { value: 1, message: "Number must be at least 1" },
-                max: { value: 10, message: "Number must be at most 10" },
+                required: "Please enter a task",
+                validate: (value) => {
+                  if(value.length < 3) {
+                    return 'Please enter at least 3 letters'
+                  }
+                  if(value.length > 12){
+                    return 'Please enter no more than 10 letters'
+                  }
+                  return true;
+                },
               })}
-              type="number"
+              type="text"
               id="task"
               className="bg-white text-black p-2 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none active:border-blue-600 border-2"
-              placeholder="Task completed today"
+              placeholder="Enter the task"
             />
             {errors.task && (
               <p className="text-red-600">{errors.task.message}</p>
@@ -76,9 +93,9 @@ export const Form = () => {
 
             <button
               type="submit"
-              className="bg-blue-500 text-white font-black p-2 rounded-md active:shadow-lg active:shadow-blue-300 shadow-md shadow-blue-300 hover:bg-blue-400 active:scale-95 transition-transform duration-150"
+              className="cursor-pointer hover:text-black bg-blue-500 text-white font-black p-2 rounded-md active:shadow-lg active:shadow-blue-400 shadow-md shadow-blue-300 hover:bg-blue-400 active:scale-95 transition-transform duration-150 "
             >
-              Submit
+              Add Task
             </button>
           </div>
         </fieldset>

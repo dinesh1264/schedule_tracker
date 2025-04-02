@@ -3,13 +3,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_MEASUERMENT_ID,
+  apiKey: "AIzaSyAwiFpo5RRR1NRibfLi-MrrWjvGGfShIyM",
+  authDomain: "schedule-tracker-9534a.firebaseapp.com",
+  projectId: "schedule-tracker-9534a",
+  storageBucket: "schedule-tracker-9534a.firebasestorage.app",
+  messagingSenderId: "292313150399",
+  appId: "1:292313150399:web:750c0bf9f1b1cea183e70a",
+  measurementId: "G-GZJ5NGPBGD",
 };
 
 // Initialize Firebase

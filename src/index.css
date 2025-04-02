@@ -3,7 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
 @import "tailwindcss";
+
+@tailwind utilities;
 
 html{
   margin: 0;
@@ -14,6 +17,7 @@ html{
 
 .header{
   font-family: "Luckiest Guy";
+  margin-right: 50%;
 }
 
 @keyframes jump {
@@ -40,6 +44,7 @@ html{
 
 .card-title{
   font-family: "Nabla";
+  @apply text-3xl;
 }
 
 .number {
@@ -61,4 +66,22 @@ html{
 /* 3D tilt on hover */
 .card:hover {
   transform: rotateY(-15deg) rotateX(-7deg) rotateZ(-1deg);
+}
+
+.todo-list{
+  font-family: "Turret Road";
+}
+
+.nav{
+  font-family: "Luckiest Guy";
+  @apply text-3xl mr-10 hover:text-fuchsia-500;
+  @apply active:shadow-xl shadow-fuchsia-500;
+}
+
+.active-nav{
+  @apply shadow-lg shadow-fuchsia-400 text-fuchsia-400 ;
+}
+
+.task-title{
+  font-family: "Stalinist One";
 }
