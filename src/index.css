@@ -59,13 +59,13 @@ html{
 
 .card {
   border-radius: 0.5rem;
-  transition: transform 0.3s;
+  transition: transform 1s;
   transform-style: preserve-3d;
 }
 
 /* 3D tilt on hover */
 .card:hover {
-  transform: rotateY(-15deg) rotateX(-7deg) rotateZ(-1deg);
+  transform: rotateY(-15deg) rotateX(-7deg);
 }
 
 .todo-list{
