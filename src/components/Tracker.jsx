@@ -17,7 +17,7 @@ export const Tracker = () => {
       <div className="flex flex-row mt-10 perspective-distant">
         {records.map((record) => (
           <div
-            className=" bg-[#302c2c] h-full w-full mr-10 ring-4 ring-black rounded-sm skew-x-10  card shadow-2xl shadow-green-400"
+            className={`bg-[#302c2c] h-full w-full mr-10 ring-4 ring-black rounded-sm skew-x-10 card ${record.person}`}
             key={record.id}
           >
             <img
@@ -29,17 +29,17 @@ export const Tracker = () => {
               <p>{record.person.toUpperCase()}</p>
             </div>
             <div className="flex font-black text-3xl text-center">
-              <p className=" bg-red-600 -p-1 shadow-2xl shadow-red-200">
+              <p className=" bg-red-600 -p-1">
                 <span className="card-title">Completed %:</span>{" "}
                 <span className="number">
                   {((record.taskCount / record.taskCount) * 100).toFixed(2)}%
                 </span>
               </p>
-              <p className="bg-cyan-500 p-1 shadow-xl shadow-cyan-300">
+              <p className="bg-cyan-500 p-1">
                 <span className="card-title">Completed:</span>{" "}
                 <span className="number">{record.taskCount}</span>
               </p>
-              <p className="bg-indigo-600 p-1 shadow-2xl shadow-indigo-100">
+              <p className="bg-indigo-600 p-1">
                 <span className="card-title">Total Task:</span>{" "}
                 <span className="number">{record.taskCount}</span>
               </p>

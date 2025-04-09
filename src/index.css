@@ -1,60 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nabla&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 @import "tailwindcss";
 
 @tailwind utilities;
 
-html{
+html {
   margin: 0;
   padding: 0;
-  background-color: black;
-  color: aliceblue;
+  font-family: "Nunito";
+  background-color: rgb(0, 0, 0);
+  color: #F2F2F2;
 }
 
-.header{
-  font-family: "Luckiest Guy";
-  margin-right: 50%;
+.header {
+  font-family: "Audiowide";
+  margin-right: 55%;
 }
 
-@keyframes jump {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+.neon-cyan {
+  color: #00FFFF;
+  text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 30px #00FFFF;
 }
 
-.jump {
-  display: inline-block;
-  animation: jump 0.6s ease-in-out infinite;
+.nav:hover{
+  color: #FF00FF;
+  text-shadow: 0 0 20px #FF00FF, 0 0 10px #FF00FF, 0 0 1px #FF00FF;
 }
 
-.title{
-  font-family: "Tektur";
+.nav {
+  font-family: "Inter";
+  @apply text-3xl text-[#33f19e] font-bold;
+  color: #39FF14;
+  text-shadow: 0 0 20px #39FF14, 0 0 10px #39FF14, 0 0 1px #39FF14;
+}
+
+.active-nav {
+  @apply text-[#FF00FF];
+  color: #FFFF33;
+  text-shadow: 0 0 20px #FFFF33, 0 0 10px #FFFF33, 0 0 1px #FFFF33;
+}
+
+.title {
+  font-family: "Exo 2";
 }
 
 .card-heading {
- font-family: "Stalinist One";
+  font-family: "Stalinist One";
 }
 
-.card-title{
+.card-title {
   font-family: "Nabla";
   @apply text-3xl;
 }
 
 .number {
   font-family: "Silkscreen";
-}
-
-.header span{
-  position: relative;
-  display: inline-block;
-  text-shadow: 0 1px 0 #dfa814, 0 2px 0 #dfa814, 0 3px 0 #dfa814,0 4px 0 #dfa814,0 5px 0 #dfa814,0 6px 0 transparent,0 7px 0 transparent,0 8px 0 transparent,0 9px 0 transparent  ;
 }
 
 .card {
@@ -68,20 +75,41 @@ html{
   transform: rotateY(-15deg) rotateX(-7deg);
 }
 
-.todo-list{
+.todo-list {
   font-family: "Turret Road";
 }
 
-.nav{
-  font-family: "Luckiest Guy";
-  @apply text-3xl mr-10 hover:text-fuchsia-500;
-  @apply active:shadow-xl shadow-fuchsia-500;
-}
 
-.active-nav{
-  @apply shadow-lg shadow-fuchsia-400 text-fuchsia-400 ;
-}
 
-.task-title{
+.task-title {
   font-family: "Stalinist One";
+}
+
+.mermaid svg path {
+  stroke: #ffffff !important;
+}
+
+.link-style {
+  @apply text-3xl font-bold p-2;
+  @apply active:translate-y-1;
+}
+
+.roadmap-nav{
+  @apply text-shadow-lg text-shadow-neutral-500 border rounded-md p-2;
+}
+
+.active-roadmap-nav{
+  @apply border border-b-red-500 rounded-md p-2 text-shadow-lg text-shadow-red-500 font-black;
+}
+
+.roadmap-heading{
+  @apply text-4xl font-bold pb-10 text-sky-300 text-shadow-md text-shadow-white;
+}
+
+.dinesh{
+  @apply shadow-2xl shadow-fuchsia-400;
+}
+
+.roshan{
+  @apply shadow-2xl shadow-white;
 }

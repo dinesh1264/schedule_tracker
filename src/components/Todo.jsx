@@ -35,14 +35,20 @@ export const Todo = () => {
 
   return (
     <div className="ml-20">
-      <div className="flex flex-row py-10 text-center">
+      <div className="flex flex-row py-10 pt-0 text-center">
         {records.map((task) => (
           <div key={task.id} className=" mr-10 h-104 w-2xl">
-            <h1 className="pt-10 text-4xl text-[#3fb] font-black task-title shadow-2xl shadow-sky-300 rounded-md">
+            <h1 className="pt-10 text-4xl text-[#00BFFF] text-shadow-2xs text-shadow-white font-black task-title shadow-2xl shadow-[#393939] rounded-md">
               {task.person.toUpperCase()}
             </h1>
-            
-            {task.tasks.length > 0 ? "" : <div className="text-5xl mt-35 font-black todo-list">No task 😒</div>}
+
+            {task.tasks.length > 0 ? (
+              ""
+            ) : (
+              <div className="text-5xl mt-35 font-black todo-list">
+                No task 😒
+              </div>
+            )}
 
             {task.tasks.map((taskObj, index) => (
               <div key={index} className="flex mt-9 px-10 gap-5">
@@ -50,7 +56,10 @@ export const Todo = () => {
                   <p className="text-4xl font-bold todo-list">{taskObj.task}</p>
                 </div>
                 <div>
-                  <button className="px-5 cursor-pointer" onClick={() => handleComplete(task.person, taskObj)}>
+                  <button
+                    className="px-5 cursor-pointer"
+                    onClick={() => handleComplete(task.person, taskObj)}
+                  >
                     <TiTickOutline className="text-5xl hover:text-green-500 rounded-lg active:translate-y-1 shadow-2xs shadow-white active:shadow-lg active:shadow-green-500" />
                   </button>
                   <button

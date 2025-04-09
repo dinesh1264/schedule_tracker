@@ -1,40 +1,43 @@
 import { useForm } from "react-hook-form";
-import { increment, doc, getDoc, setDoc, arrayUnion, updateDoc } from "firebase/firestore";
+import {
+  increment,
+  doc,
+  getDoc,
+  setDoc,
+  arrayUnion,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "../firebase";
 
-
-
 export const Form = () => {
-
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm({ mode: "onChange", defaultValues: { person: "", task:""}});
-  
+  } = useForm({ mode: "onChange", defaultValues: { person: "", task: "" } });
+
   const onSubmit = async (data) => {
-    data.task = data.task.toLowerCase()
-    const { person,task } = data;
-    
+    data.task = data.task.toLowerCase();
+    const { person, task } = data;
+
     try {
       const docRef = doc(db, "progress", person);
       const docSnap = await getDoc(docRef);
-      if(docSnap.exists()){
+      if (docSnap.exists()) {
         await updateDoc(docRef, {
-          tasks: arrayUnion({task}),
-          taskCount: increment(1)
+          tasks: arrayUnion({ task }),
+          taskCount: increment(1),
         });
-      }else{
-        await setDoc(docRef,{
+      } else {
+        await setDoc(docRef, {
           person,
-          tasks: [{ task}],
-          taskCount: 1
+          tasks: [{ task }],
+          taskCount: 1,
         });
       }
       reset();
-      
-    } catch(error){
+    } catch (error) {
       console.error("Error adding document", error);
     }
   };
@@ -42,14 +45,16 @@ export const Form = () => {
   console.log(errors);
 
   return (
-    <div className="mt-30 pl-[35rem] relative">
+    <div className="mt-30 flex justify-center-safe relative">
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset>
-          <legend className=" font-black text-[#00cda2] text-4xl title">
+          <legend className=" font-black text-[#39FF14] text-shadow-sm text-shadow-white text-4xl title  pb-10">
             Track Your Progress
           </legend>
           <div className="flex flex-col space-y-3 py-5 w-93 text-2xl">
-            <label htmlFor="person" className="font-black">Choose a person</label>
+            <label htmlFor="person" className="font-black">
+              Choose a person
+            </label>
             <select
               defaultValue={""}
               {...register("person", {
@@ -68,16 +73,18 @@ export const Form = () => {
               <p className="text-red-600">{errors.person.message}</p>
             )}
 
-            <label htmlFor="task" className="font-black">Enter the task</label>
+            <label htmlFor="task" className="font-black">
+              Enter the task
+            </label>
             <input
               {...register("task", {
                 required: "Please enter a task",
                 validate: (value) => {
-                  if(value.length < 3) {
-                    return 'Please enter at least 3 letters'
+                  if (value.length < 3) {
+                    return "Please enter at least 3 letters";
                   }
-                  if(value.length > 12){
-                    return 'Please enter no more than 10 letters'
+                  if (value.length > 12) {
+                    return "Please enter no more than 10 letters";
                   }
                   return true;
                 },
@@ -93,14 +100,13 @@ export const Form = () => {
 
             <button
               type="submit"
-              className="cursor-pointer hover:text-black bg-blue-500 text-white font-black p-2 rounded-md active:shadow-lg active:shadow-blue-400 shadow-md shadow-blue-300 hover:bg-blue-400 active:scale-95 transition-transform duration-150 "
+              className="cursor-pointer text-black bg-[#FFFF33] font-black p-2 rounded-md active:shadow-lg active:shadow-[#ffff33ce] shadow-md shadow-blue-300 hover:bg-[#ffff33dd] active:scale-95 transition-transform duration-150 "
             >
               Add Task
             </button>
           </div>
         </fieldset>
       </form>
-
     </div>
   );
 };
