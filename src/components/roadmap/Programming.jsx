@@ -8,6 +8,7 @@ export const Programming = () => {
             %%Programming%%
             js(JavaScript) --> b(Blockchain basics) --> eth(solidity or vyper) --> hh(Hardhat)
             js--> h&c(HTML and CSS) --> dom(DOM) --> react(React)
+            h&c --> bom(BOM)
             h&c --> Canvas
             react --> n.js(next.js) --> tw(TailwindCSS) --> pr(Project)
             eth --> foundry(Foundry) --> sec(Security) --> Audit(Auditing)
