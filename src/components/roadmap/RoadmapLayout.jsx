@@ -4,9 +4,9 @@ import { NavLink, Outlet } from 'react-router-dom'
 export const RoadmapLayout = () => {
   return (
     <div>
-      <div className="pl-[6%] pb-10 shadow-lg shadow-gray-600">
-        <ul className="flex pt-10 gap-10">
-          <li className="link-style" data-text="Programming">
+      <div className="pl-[6%] pb-10 shadow-lg shadow-gray-600 roadmap-div">
+        <ul className="flex pt-10 gap-10 roadmap-ul">
+          <li className="link-style">
             <NavLink
               to={"/roadmap"}
               relative="path"

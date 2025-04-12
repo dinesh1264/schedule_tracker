@@ -45,13 +45,13 @@ export const Form = () => {
   console.log(errors);
 
   return (
-    <div className="mt-30 flex justify-center-safe relative">
+    <div className="mt-30 flex justify-center-safe relative form-div">
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset>
-          <legend className=" font-black text-[#39FF14] text-shadow-sm text-shadow-white text-4xl title  pb-10">
+          <legend className="font-black text-[#39FF14] text-shadow-sm text-shadow-white text-4xl title pb-10 form-legend">
             Track Your Progress
           </legend>
-          <div className="flex flex-col space-y-3 py-5 w-93 text-2xl">
+          <div className="flex flex-col space-y-3 py-5 w-93 text-2xl form-inner-div">
             <label htmlFor="person" className="font-black">
               Choose a person
             </label>
@@ -61,7 +61,7 @@ export const Form = () => {
                 required: "Please select a person",
               })}
               id="person"
-              className="bg-white cursor-pointer text-black p-2 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none active:border-blue-600 border-2"
+              className="bg-white cursor-pointer text-black p-2 rounded-md shadow-sm caret-pink-500 focus:ring-2 focus:ring-orange-500 focus:outline-none active:border-orange-600 border-2"
             >
               <option value="" disabled>
                 Choose a person
@@ -91,7 +91,7 @@ export const Form = () => {
               })}
               type="text"
               id="task"
-              className="bg-white text-black p-2 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none active:border-blue-600 border-2"
+              className="bg-white text-black p-2 rounded-md shadow-sm focus:ring-2 focus:ring-orange-500 focus:outline-none active:border-orange-500 border-2"
               placeholder="Enter the task"
             />
             {errors.task && (

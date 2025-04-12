@@ -79,8 +79,6 @@ html {
   font-family: "Turret Road";
 }
 
-
-
 .task-title {
   font-family: "Stalinist One";
 }
@@ -112,4 +110,142 @@ html {
 
 .roshan{
   @apply shadow-2xl shadow-white;
+}
+
+.link-title{
+ @apply text-3xl font-extrabold pb-2 text-red-500;
+}
+
+.links{
+ @apply hover:text-white text-xl pb-1 cursor-pointer font-bold
+}
+
+.links:link{
+  @apply text-white hover:bg-orange-500
+}
+
+.links:visited{
+  @apply text-blue-500
+}
+
+.links:visited:hover{
+  @apply text-white
+}
+
+@media only screen and (max-width:600px){
+  .header-list{
+    @apply ml-1 pt-2 mr-3;
+  }
+
+  .header{
+    @apply text-3xl ml-3 mr-5;
+  }
+
+  .nav{
+    @apply text-[1rem];
+  }
+
+  .form-legend{
+    @apply text-3xl text-center;
+  }
+
+  .form-div label{
+    @apply hidden;
+  }
+
+  .form-inner-div{
+    @apply w-auto gap-1;
+  }
+
+  .form-inner-div button{
+    @apply mt-4
+  }
+
+  .todo-div{
+    @apply flex flex-col ml-2;
+  }
+
+  .todo-card{
+    @apply w-full h-full;
+  }
+
+  .todo-header{
+    @apply text-2xl;
+  }
+
+  .todo-task-div{
+    @apply gap-0 px-0;
+  }
+
+  .task-text{
+    @apply w-[14rem]
+  }
+
+  .todo-list{
+    @apply text-2xl mt-10;
+  }
+
+  .todo-icon{
+    @apply text-3xl;
+  }
+
+  .tracker{
+    @apply ml-0 my-20;
+  }
+
+  .tracker-main-div{
+    @apply flex flex-col mx-2;
+  }
+
+  .card{
+    @apply skew-0 w-[22rem] mb-10
+  }
+
+  .tracker-info{
+    @apply text-xl
+  }
+
+  .card-heading{
+    @apply text-3xl
+  }
+
+  .card-title{
+    @apply text-xl;
+  }
+
+  .roadmap-div{
+    @apply flex flex-col gap-0;
+  }
+
+  .roadmap-heading{
+    @apply pb-5;
+  }
+
+  .mermaid svg{
+    @apply w-full h-full
+  }
+
+  .link-title{
+    @apply text-2xl pt-5
+  }
+
+  .links{
+    @apply text-xl;
+  }
+
+  .roadmap-div{
+    @apply overflow-x-auto
+  }
+
+  .roadmap-nav{
+    @apply text-2xl
+  }
+
+  .roadmap-ul{
+    @apply gap-5
+  }
+
+  .active-roadmap-nav{
+    @apply text-2xl
+  }
 }

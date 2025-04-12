@@ -11,10 +11,10 @@ export const Tracker = () => {
   }
 
   return (
-    <div className="ml-30 mt-20 mr-20">
+    <div className="ml-30 mt-20 mr-20 tracker">
       <h1 className="font-black text-[#00cda2] text-2xl underline decoration-[#f35b87] decoration-4"></h1>
 
-      <div className="flex flex-row mt-10 perspective-distant">
+      <div className="flex flex-row mt-10 perspective-distant tracker-main-div">
         {records.map((record) => (
           <div
             className={`bg-[#302c2c] h-full w-full mr-10 ring-4 ring-black rounded-sm skew-x-10 card ${record.person}`}
@@ -28,8 +28,8 @@ export const Tracker = () => {
             <div className="text-white text-4xl font-black text-center py-5 bg-indigo-900 card-heading">
               <p>{record.person.toUpperCase()}</p>
             </div>
-            <div className="flex font-black text-3xl text-center">
-              <p className=" bg-red-600 -p-1">
+            <div className="flex font-black text-3xl text-center tracker-info">
+              <p className=" bg-red-600">
                 <span className="card-title">Completed %:</span>{" "}
                 <span className="number">
                   {((record.taskCount / record.taskCount) * 100).toFixed(2)}%

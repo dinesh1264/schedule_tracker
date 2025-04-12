@@ -28,8 +28,27 @@ export const Programming = () => {
 
   return (
     <div>
-      <h1 className='roadmap-heading'>Programming</h1>
-      <Mermaid chart={programming} />
+      <h1 className="roadmap-heading">Programming</h1>
+      <div className="flex roadmap-div">
+        <Mermaid chart={programming} />
+        <div>
+          <h1 className="link-title">Links:</h1>
+          <ul>
+            <li>
+              <a
+                href="https://plaid-panther-491.notion.site/Links-to-check-1aba065e3fae80789602ed1b59465a8c"
+                target="_blank"
+                className="links"
+              >
+                Basic programming & Frontend development
+              </a>
+            </li>
+            <li>
+              <a href="https://updraft.cyfrin.io/courses" target='_blank' className='links'>Cyfrin Updraft</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
