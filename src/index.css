@@ -41,6 +41,10 @@ html {
   text-shadow: 0 0 20px #39FF14, 0 0 10px #39FF14, 0 0 1px #39FF14;
 }
 
+.phone-div{
+ @apply hidden;
+}
+
 .active-nav {
   @apply text-[#FF00FF];
   color: #FFFF33;
@@ -138,11 +142,23 @@ html {
   }
 
   .header{
-    @apply text-3xl ml-3 mr-5;
+    @apply text-3xl ml-3 mr-20;
+  }
+
+  .header-list .nav{
+    @apply hidden;
   }
 
   .nav{
-    @apply text-[1rem];
+    @apply text-[1rem]
+  }
+
+  .phone-nav{
+    @apply flex items-baseline gap-15 relative;
+  }
+
+  .phone-div{
+    @apply contents;
   }
 
   .form-legend{
@@ -234,15 +250,15 @@ html {
   }
 
   .roadmap-div{
-    @apply overflow-x-auto
+    @apply overflow-x-auto pl-2
   }
 
   .roadmap-nav{
-    @apply text-2xl
+    @apply text-2xl pr-4
   }
 
   .roadmap-ul{
-    @apply gap-5
+    @apply gap-1
   }
 
   .active-roadmap-nav{
