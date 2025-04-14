@@ -142,7 +142,7 @@ html {
   }
 
   .header{
-    @apply text-3xl ml-2 mx-7;
+    @apply text-2xl ml-2 mx-7;
   }
 
   .nav{
