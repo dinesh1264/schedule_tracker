@@ -138,27 +138,15 @@ html {
 
 @media only screen and (max-width:600px){
   .header-list{
-    @apply ml-1 pt-2 mr-3;
+    @apply px-2 mx-1 gap-2;
   }
 
   .header{
-    @apply text-3xl ml-3 mr-20;
-  }
-
-  .header-list .nav{
-    @apply hidden;
+    @apply text-3xl ml-2 mx-7;
   }
 
   .nav{
     @apply text-[1rem]
-  }
-
-  .phone-nav{
-    @apply flex items-baseline gap-15 relative;
-  }
-
-  .phone-div{
-    @apply contents;
   }
 
   .form-legend{
