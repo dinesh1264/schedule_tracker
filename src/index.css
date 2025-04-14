@@ -2,10 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nabla&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 @import "tailwindcss";
 
@@ -16,7 +16,7 @@ html {
   padding: 0;
   font-family: "Nunito";
   background-color: rgb(0, 0, 0);
-  color: #F2F2F2;
+  color: #f2f2f2;
 }
 
 .header {
@@ -25,30 +25,30 @@ html {
 }
 
 .neon-cyan {
-  color: #00FFFF;
-  text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 30px #00FFFF;
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 30px #00ffff;
 }
 
-.nav:hover{
-  color: #FF00FF;
-  text-shadow: 0 0 20px #FF00FF, 0 0 10px #FF00FF, 0 0 1px #FF00FF;
+.nav:hover {
+  color: #ff00ff;
+  text-shadow: 0 0 20px #ff00ff, 0 0 10px #ff00ff, 0 0 1px #ff00ff;
 }
 
 .nav {
   font-family: "Inter";
   @apply text-3xl text-[#33f19e] font-bold;
-  color: #39FF14;
-  text-shadow: 0 0 20px #39FF14, 0 0 10px #39FF14, 0 0 1px #39FF14;
+  color: #39ff14;
+  text-shadow: 0 0 20px #39ff14, 0 0 10px #39ff14, 0 0 1px #39ff14;
 }
 
-.phone-div{
- @apply hidden;
+.phone-div {
+  @apply hidden;
 }
 
 .active-nav {
   @apply text-[#FF00FF];
-  color: #FFFF33;
-  text-shadow: 0 0 20px #FFFF33, 0 0 10px #FFFF33, 0 0 1px #FFFF33;
+  color: #ffff33;
+  text-shadow: 0 0 20px #ffff33, 0 0 10px #ffff33, 0 0 1px #ffff33;
 }
 
 .title {
@@ -96,218 +96,336 @@ html {
   @apply active:translate-y-1;
 }
 
-.roadmap-nav{
+.roadmap-nav {
   @apply text-shadow-lg text-shadow-neutral-500 border rounded-md p-2;
 }
 
-.active-roadmap-nav{
+.active-roadmap-nav {
   @apply border border-b-red-500 rounded-md p-2 text-shadow-lg text-shadow-red-500 font-black;
 }
 
-.roadmap-heading{
+.roadmap-heading {
   @apply text-4xl font-bold pb-10 text-sky-300 text-shadow-md text-shadow-white;
 }
 
-.dinesh{
+.dinesh {
   @apply shadow-2xl shadow-fuchsia-400;
 }
 
-.roshan{
+.roshan {
   @apply shadow-2xl shadow-white;
 }
 
-.link-title{
- @apply text-3xl font-extrabold pb-2 text-red-500;
+.link-title {
+  @apply text-3xl font-extrabold pb-2 text-red-500;
 }
 
-.links{
- @apply hover:text-white text-xl pb-1 cursor-pointer font-bold
+.links {
+  @apply hover:text-white text-xl pb-1 cursor-pointer font-bold;
 }
 
-.links:link{
-  @apply text-white hover:bg-orange-500
+.links:link {
+  @apply text-white hover:bg-orange-500;
 }
 
-.links:visited{
-  @apply text-blue-500
+.links:visited {
+  @apply text-blue-500;
 }
 
-.links:visited:hover{
-  @apply text-white
+.links:visited:hover {
+  @apply text-white;
 }
 
-@media only screen and (max-width:600px){
-  .header-list{
+@media only screen and (max-width: 600px) {
+  .header-list {
     @apply px-2 mx-1 gap-2;
   }
 
-  .header{
+  .header {
     @apply text-2xl ml-2 mx-7;
   }
 
-  .nav{
-    @apply text-[1rem]
+  .nav {
+    @apply text-[1rem];
   }
 
-  .form-legend{
+  .form-legend {
     @apply text-3xl text-center;
   }
 
-  .form-div label{
+  .form-div label {
     @apply hidden;
   }
 
-  .form-inner-div{
+  .form-inner-div {
     @apply w-auto gap-1;
   }
 
-  .form-inner-div button{
-    @apply mt-4
+  .form-inner-div button {
+    @apply mt-4;
   }
 
-  .todo-div{
+  .todo-div {
     @apply flex flex-col ml-2;
   }
 
-  .todo-card{
+  .todo-card {
     @apply w-full h-full;
   }
 
-  .todo-header{
+  .todo-header {
     @apply text-2xl;
   }
 
-  .todo-task-div{
+  .todo-task-div {
     @apply gap-0 px-0;
   }
 
-  .task-text{
-    @apply w-[14rem]
+  .task-text {
+    @apply w-[14rem];
   }
 
-  .todo-list{
+  .todo-list {
     @apply text-2xl mt-10;
   }
 
-  .todo-icon{
+  .todo-icon {
     @apply text-3xl;
   }
 
-  .tracker{
+  .tracker {
     @apply ml-0 my-20;
   }
 
-  .tracker-main-div{
+  .tracker-main-div {
     @apply flex flex-col mx-2;
   }
 
-  .card{
-    @apply skew-0 w-[22rem] mb-10
+  .card {
+    @apply skew-0 w-[22rem] mb-10;
   }
 
-  .tracker-info{
-    @apply text-xl
-  }
-
-  .card-heading{
-    @apply text-3xl
-  }
-
-  .card-title{
+  .tracker-info {
     @apply text-xl;
   }
 
-  .roadmap-div{
+  .card-heading {
+    @apply text-3xl;
+  }
+
+  .card-title {
+    @apply text-xl;
+  }
+
+  .roadmap-div {
     @apply flex flex-col gap-0;
   }
 
-  .roadmap-heading{
+  .roadmap-heading {
     @apply pb-5;
   }
 
-  .mermaid svg{
-    @apply w-full h-full
+  .mermaid svg {
+    @apply w-full h-full;
   }
 
-  .link-title{
-    @apply text-2xl pt-5
+  .link-title {
+    @apply text-2xl pt-5;
   }
 
-  .links{
+  .links {
     @apply text-xl;
   }
 
-  .roadmap-div{
-    @apply overflow-x-auto pl-2
+  .roadmap-div {
+    @apply overflow-x-auto pl-2;
   }
 
-  .roadmap-nav{
-    @apply text-2xl pr-4
+  .roadmap-nav {
+    @apply text-2xl pr-4;
   }
 
-  .roadmap-ul{
-    @apply gap-1
+  .roadmap-ul {
+    @apply gap-1;
   }
 
-  .active-roadmap-nav{
-    @apply text-2xl
+  .active-roadmap-nav {
+    @apply text-2xl;
   }
 }
 
-@media only screen and (max-width: 780px){
-  .header-list{
-    @apply mx-5 my-5 gap-5 justify-normal;
+@media only screen and (min-width: 667px) {
+  .header-list {
+    @apply px-2 mx-1 gap-2;
   }
 
-  .header{
-    @apply text-4xl mr-[30%] ml-2
+  .header {
+    @apply text-2xl ml-2 mx-7;
   }
 
-  .nav{
-    @apply text-[1.7rem]
+  .nav {
+    @apply text-[1rem];
   }
 
-  .form-div{
-    @apply justify-center-safe mt-[30%] mb-[30%];
+  .form-legend {
+    @apply text-3xl text-center;
   }
 
-  .todo-div{
-    @apply flex-col mx-10 overflow-y-auto;
+  .form-div label {
+    @apply hidden;
   }
 
-  .todo-card{
-    @apply h-full mb-5 overflow-y-auto;
+  .form-inner-div {
+    @apply w-auto gap-1;
   }
 
-  .tracker{
+  .form-inner-div button {
+    @apply mt-4;
+  }
+
+  .todo-div {
+    @apply flex flex-col ml-2;
+  }
+
+  .todo-card {
+    @apply w-full h-full;
+  }
+
+  .todo-header {
+    @apply text-2xl;
+  }
+
+  .todo-task-div {
+    @apply gap-0 px-0;
+  }
+
+  .task-text {
+    @apply w-[14rem];
+  }
+
+  .todo-list {
+    @apply text-2xl mt-10;
+  }
+
+  .todo-icon {
+    @apply text-3xl;
+  }
+
+  .tracker {
     @apply ml-0 my-20;
   }
 
-  .tracker-main-div{
-    @apply flex flex-col ml-[21%];
+  .tracker-main-div {
+    @apply flex flex-col mx-2;
   }
 
-  .card{
-    @apply skew-0 w-[30rem] mb-16
+  .card {
+    @apply skew-0 w-[22rem] mb-10;
   }
 
-  .card-title{
+  .tracker-info {
     @apply text-xl;
   }
 
-  .mermaid svg{
-    @apply h-full
+  .card-heading {
+    @apply text-3xl;
   }
 
-  .roadmap-div{
-    @apply pl-2 flex flex-col gap-5
+  .card-title {
+    @apply text-xl;
   }
 
-  .link-title{
-    @apply pt-0
+  .roadmap-div {
+    @apply flex flex-col gap-0;
   }
 
-  .roadmap-div{
-    @apply overflow-x-auto
+  .roadmap-heading {
+    @apply pb-5;
+  }
+
+  .mermaid svg {
+    @apply w-full h-full;
+  }
+
+  .link-title {
+    @apply text-2xl pt-5;
+  }
+
+  .links {
+    @apply text-xl;
+  }
+
+  .roadmap-div {
+    @apply overflow-x-auto pl-2;
+  }
+
+  .roadmap-nav {
+    @apply text-2xl pr-4;
+  }
+
+  .roadmap-ul {
+    @apply gap-1;
+  }
+
+  .active-roadmap-nav {
+    @apply text-2xl;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  .header-list {
+    @apply mx-5 my-5 gap-5 justify-normal;
+  }
+
+  .header {
+    @apply text-4xl mr-[30%] ml-2;
+  }
+
+  .nav {
+    @apply text-[1.7rem];
+  }
+
+  .form-div {
+    @apply justify-center-safe mt-[30%] mb-[30%];
+  }
+
+  .todo-div {
+    @apply flex-col mx-10 overflow-y-auto;
+  }
+
+  .todo-card {
+    @apply h-full mb-5 overflow-y-auto;
+  }
+
+  .tracker {
+    @apply ml-0 my-20;
+  }
+
+  .tracker-main-div {
+    @apply flex flex-col ml-[21%];
+  }
+
+  .card {
+    @apply skew-0 w-[30rem] mb-16;
+  }
+
+  .card-title {
+    @apply text-xl;
+  }
+
+  .mermaid svg {
+    @apply h-full;
+  }
+
+  .roadmap-div {
+    @apply pl-2 flex flex-col gap-5;
+  }
+
+  .link-title {
+    @apply pt-0;
+  }
+
+  .roadmap-div {
+    @apply overflow-x-auto;
   }
 }
