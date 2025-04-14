@@ -253,3 +253,61 @@ html {
     @apply text-2xl
   }
 }
+
+@media only screen and (max-width: 780px){
+  .header-list{
+    @apply mx-5 my-5 gap-5 justify-normal;
+  }
+
+  .header{
+    @apply text-4xl mr-[30%] ml-2
+  }
+
+  .nav{
+    @apply text-[1.7rem]
+  }
+
+  .form-div{
+    @apply justify-center-safe mt-[30%] mb-[30%];
+  }
+
+  .todo-div{
+    @apply flex-col mx-10 overflow-y-auto;
+  }
+
+  .todo-card{
+    @apply h-full mb-5 overflow-y-auto;
+  }
+
+  .tracker{
+    @apply ml-0 my-20;
+  }
+
+  .tracker-main-div{
+    @apply flex flex-col ml-[21%];
+  }
+
+  .card{
+    @apply skew-0 w-[30rem] mb-16
+  }
+
+  .card-title{
+    @apply text-xl;
+  }
+
+  .mermaid svg{
+    @apply h-full
+  }
+
+  .roadmap-div{
+    @apply pl-2 flex flex-col gap-5
+  }
+
+  .link-title{
+    @apply pt-0
+  }
+
+  .roadmap-div{
+    @apply overflow-x-auto
+  }
+}

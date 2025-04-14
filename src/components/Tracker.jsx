@@ -17,7 +17,7 @@ export const Tracker = () => {
       <div className="flex flex-row mt-10 perspective-distant tracker-main-div">
         {records.map((record) => (
           <div
-            className={`bg-[#302c2c] h-full w-full mr-10 ring-4 ring-black rounded-sm skew-x-10 card ${record.person}`}
+            className={`bg-[#302c2c] h-full w-full mr-10 rounded-sm skew-x-10 card ${record.person}`}
             key={record.id}
           >
             <img
