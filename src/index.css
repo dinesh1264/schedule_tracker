@@ -182,11 +182,11 @@ html {
   }
 
   .task-text {
-    @apply w-[14rem];
+    @apply w-[60%];
   }
 
   .todo-list {
-    @apply text-2xl mt-10;
+    @apply text-2xl mt-1;
   }
 
   .todo-icon {
@@ -194,7 +194,7 @@ html {
   }
 
   .tracker {
-    @apply ml-0 my-20;
+    @apply ml-[5%] my-20;
   }
 
   .tracker-main-div {
@@ -202,7 +202,7 @@ html {
   }
 
   .card {
-    @apply skew-0 w-[22rem] mb-10;
+    @apply skew-0 w-[20rem] mb-10;
   }
 
   .tracker-info {
@@ -210,11 +210,15 @@ html {
   }
 
   .card-heading {
-    @apply text-3xl;
+    @apply text-2xl;
   }
 
   .card-title {
-    @apply text-xl;
+    @apply text-[0.8rem];
+  }
+
+  .number{
+    @apply text-[0.8rem]
   }
 
   .roadmap-div {
@@ -254,7 +258,7 @@ html {
   }
 }
 
-@media only screen and (min-width: 667px) {
+@media only screen and (min-width: 600px) and (max-width: 768px) {
   .header-list {
     @apply px-2 mx-1 gap-2;
   }
@@ -300,11 +304,11 @@ html {
   }
 
   .task-text {
-    @apply w-[14rem];
+    @apply w-[60%];
   }
 
   .todo-list {
-    @apply text-2xl mt-10;
+    @apply text-2xl mt-1;
   }
 
   .todo-icon {
@@ -312,7 +316,7 @@ html {
   }
 
   .tracker {
-    @apply ml-0 my-20;
+    @apply ml-[18%] my-20;
   }
 
   .tracker-main-div {
@@ -320,19 +324,23 @@ html {
   }
 
   .card {
-    @apply skew-0 w-[22rem] mb-10;
+    @apply skew-0 w-[25rem] mb-10;
   }
 
   .tracker-info {
     @apply text-xl;
   }
 
+  .number{
+    @apply text-xl;
+  }
+
   .card-heading {
-    @apply text-3xl;
+    @apply text-2xl;
   }
 
   .card-title {
-    @apply text-xl;
+    @apply text-[1rem];
   }
 
   .roadmap-div {
@@ -372,9 +380,8 @@ html {
   }
 }
 
-@media only screen and (min-width: 780px) and (max-width:959px){
-  
-  .header-list{
+@media only screen and (min-width: 768px) and (max-width: 1400px) {
+  .header-list {
     @apply mx-5 my-5 gap-5 justify-normal;
   }
 
@@ -391,7 +398,11 @@ html {
   }
 
   .todo-div {
-    @apply flex-col mx-10 overflow-y-auto;
+    @apply flex-col mx-10 ml-[15%] overflow-y-auto;
+  }
+
+  .todo-task-div{
+    @apply overflow-y-auto overflow-hidden
   }
 
   .todo-card {

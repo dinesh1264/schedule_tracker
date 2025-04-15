@@ -87,7 +87,7 @@ export const Todo = () => {
           )}
 
           {task.tasks.map((taskObj, index) => (
-            <div key={index} className="flex mt-9 px-10 gap-5 todo-task-div">
+            <div key={index} className="flex mt-9 gap-5 todo-task-div">
               <div className="w-[25rem] task-text">
                 <p className="text-4xl font-bold todo-list">{taskObj.task}</p>
               </div>
