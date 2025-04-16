@@ -178,11 +178,11 @@ html {
   }
 
   .todo-header {
-    @apply text-2xl;
+    @apply text-2xl pl-10;
   }
 
   .todo-task-div {
-    @apply gap-0 px-0 mt-0;
+    @apply gap-0 px-0 mt-0 ml-5;
   }
 
   .task-text {
@@ -190,7 +190,7 @@ html {
   }
 
   .todo-notask{
-    @apply text-2xl mt-5 text-center;
+    @apply text-2xl mt-5 text-center ml-15;
   }
 
   .todo-list {
@@ -304,7 +304,7 @@ html {
   }
 
   .todo-header {
-    @apply text-2xl;
+    @apply text-2xl pl-10;
   }
 
   .todo-task-div {
@@ -316,11 +316,11 @@ html {
   }
 
   .todo-notask{
-    @apply text-2xl  mt-5 -ml-[5%];
+    @apply text-2xl  mt-5 ml-15;
   }
 
   .todo-list {
-    @apply text-2xl  mt-5;
+    @apply text-2xl mt-5;
   }
 
   .todo-icon {
@@ -409,20 +409,24 @@ html {
     @apply justify-center-safe mt-[30%] mb-[30%];
   }
 
+  .todo-header{
+    @apply pl-[1%];
+  }
+
   .todo-div {
-    @apply flex-col mx-10 ml-[15%] overflow-y-auto;
+    @apply flex-col mx-10 overflow-y-auto;
   }
 
   .todo-task-div{
-    @apply overflow-y-auto overflow-hidden
+    @apply overflow-y-auto overflow-hidden ml-0
   }
 
   .todo-notask{
-    @apply mt-20;
+    @apply text-3xl mt-20 ml-5;
   }
 
   .todo-card {
-    @apply h-full mb-5 overflow-y-auto;
+    @apply h-full mb-5  overflow-y-auto;
   }
 
   .tracker {

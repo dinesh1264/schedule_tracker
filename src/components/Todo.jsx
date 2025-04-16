@@ -5,12 +5,25 @@ import { arrayRemove, increment, updateDoc, doc } from "firebase/firestore";
 import { TiTickOutline } from "react-icons/ti";
 import { TiTrash } from "react-icons/ti";
 import { RxDragHandleDots2 } from "react-icons/rx";
+import { MdRemoveRedEye } from "react-icons/md";
+import { LuEyeClosed } from "react-icons/lu";
 import Sortable from "sortablejs";
 
 export const Todo = () => {
-  const [hide, setHide] = useState(false)
-
+  
   const records = useRecordsContext();
+  
+  const [hide, setHide] = useState(
+    Array(records.length).fill(true)
+  )
+
+  const toggleVisibility = (index) => {
+    setHide((prev) => {
+      const newHide = [...prev]
+      newHide[index] = !newHide[index]
+      return newHide
+    })
+  }
 
   useEffect(() => {}, [records]);
 
@@ -68,33 +81,33 @@ export const Todo = () => {
     };
   }, []);
   
-
-
-
   return (
     <div
       className="mx-10 flex flex-row py-10 pt-0 text-center todo-div"
       ref={listRef}
     >
-      {records.map((task) => (
-        <div key={task.id} className="mt-10 mr-10 h-104 w-2xl todo-card">
-          <div className="flex pl-[20%] gap-[10%] pt-10 shadow-2xl shadow-[#393939] text-4xl todo-header">
-            <RxDragHandleDots2 className="drag-handle cursor-move" />
+      {records.map((task, index) => (
+        <div key={task.id} className="mt-10 h-104 w-2xl todo-card">
+          <div className="flex pl-[20%] justify-between pt-10 shadow-2xl shadow-[#393939] text-4xl todo-header">
+            <RxDragHandleDots2 className="drag-handle cursor-move text-4xl" />
             <h1 className=" text-[#00BFFF] font-black task-title text-shadow-2xs text-shadow-white rounded-md">
               {task.person.toUpperCase()}
             </h1>
+            <button onClick={() => toggleVisibility(index)}>
+              {hide[index] ? <MdRemoveRedEye className="text-4xl"/> : <LuEyeClosed className="text-4xl"/>}
+            </button>
           </div>
 
           {task.tasks.length > 0 ? (
             ""
           ) : (
-            <div className="text-5xl mt-35 ml-20 text-center font-black todo-notask">
+            <div className={`flex justify-center-safe text-5xl mt-35 ml-40 text-center font-black todo-notask ${hide[index] ? "":"hidden"}`}>
               No task 😒
             </div>
           )}
 
           {task.tasks.map((taskObj, index) => (
-            <div key={index} className="flex mt-9 gap-5 todo-task-div">
+            <div key={index} className={`flex mt-9 gap-5 ml-15 todo-task-div ${hide[index] ? "":"hidden"}`}>
               <div className="w-[25rem] task-text">
                 <p className="text-4xl font-bold todo-list">{taskObj.task}</p>
               </div>
@@ -114,6 +127,7 @@ export const Todo = () => {
               </div>
             </div>
           ))}
+        
         </div>
       ))}
     </div>
