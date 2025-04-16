@@ -426,7 +426,7 @@ html {
   }
 
   .todo-card {
-    @apply h-full mb-5  overflow-y-auto;
+    @apply h-full mb-5 mr-1 overflow-y-auto;
   }
 
   .tracker {

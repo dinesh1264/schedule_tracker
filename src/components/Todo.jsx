@@ -87,7 +87,7 @@ export const Todo = () => {
       ref={listRef}
     >
       {records.map((task, index) => (
-        <div key={task.id} className="mt-10 h-104 w-2xl todo-card">
+        <div key={task.id} className="mt-10 mr-10 h-104 w-2xl todo-card">
           <div className="flex pl-[20%] justify-between pt-10 shadow-2xl shadow-[#393939] text-4xl todo-header">
             <RxDragHandleDots2 className="drag-handle cursor-move text-4xl" />
             <h1 className=" text-[#00BFFF] font-black task-title text-shadow-2xs text-shadow-white rounded-md">
@@ -109,7 +109,7 @@ export const Todo = () => {
           {task.tasks.map((taskObj, index) => (
             <div key={index} className={`flex mt-9 gap-5 ml-15 todo-task-div ${hide[index] ? "":"hidden"}`}>
               <div className="w-[25rem] task-text">
-                <p className="text-4xl font-bold todo-list">{taskObj.task}</p>
+                <p className="text-5xl font-bold todo-list">{taskObj.task}</p>
               </div>
               <div>
                 <button
