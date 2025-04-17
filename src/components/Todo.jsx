@@ -14,7 +14,7 @@ export const Todo = () => {
   const records = useRecordsContext();
   
   const [hide, setHide] = useState(
-    Array(records.length).fill(true)
+    Array(records.length).fill(false)
   )
 
   const toggleVisibility = (index) => {
@@ -87,47 +87,59 @@ export const Todo = () => {
       ref={listRef}
     >
       {records.map((task, index) => (
-        <div key={task.id} className="mt-10 mr-10 h-104 w-2xl todo-card">
+        <div key={task.id} className="mt-10 mr-10 h-104 w-[2xl] todo-card">
           <div className="flex pl-[20%] justify-between pt-10 shadow-2xl shadow-[#393939] text-4xl todo-header">
             <RxDragHandleDots2 className="drag-handle cursor-move text-4xl" />
             <h1 className=" text-[#00BFFF] font-black task-title text-shadow-2xs text-shadow-white rounded-md">
               {task.person.toUpperCase()}
             </h1>
             <button onClick={() => toggleVisibility(index)}>
-              {hide[index] ? <MdRemoveRedEye className="text-4xl"/> : <LuEyeClosed className="text-4xl"/>}
+              {hide[index] ? (
+                <LuEyeClosed className="text-4xl" />
+              ) : (
+                <MdRemoveRedEye className="text-4xl" />
+              )}
             </button>
           </div>
 
           {task.tasks.length > 0 ? (
             ""
           ) : (
-            <div className={`flex justify-center-safe text-5xl mt-35 ml-40 text-center font-black todo-notask ${hide[index] ? "":"hidden"}`}>
+            <div
+              className={`flex justify-center-safe text-5xl mt-35 ml-40 text-center font-black todo-notask ${
+                hide[index] ? "invisible" : ""
+              }`}
+            >
               No task 😒
             </div>
           )}
 
-          {task.tasks.map((taskObj, index) => (
-            <div key={index} className={`flex mt-9 gap-5 ml-15 todo-task-div ${hide[index] ? "":"hidden"}`}>
-              <div className="w-[25rem] task-text">
-                <p className="text-5xl font-bold todo-list">{taskObj.task}</p>
+          <div className={`${hide[index] ? "invisible" : ""}`}>
+            {task.tasks.map((taskObj, index) => (
+              <div
+                key={index}
+                className={`flex mt-9 gap-5 ml-15 todo-task-div`}
+              >
+                <div className="w-[25rem] task-text">
+                  <p className="text-5xl font-bold todo-list">{taskObj.task}</p>
+                </div>
+                <div>
+                  <button
+                    className="px-5 cursor-pointer"
+                    onClick={() => handleComplete(task.person, taskObj)}
+                  >
+                    <TiTickOutline className="todo-icon text-5xl hover:text-green-500 rounded-lg active:translate-y-1 shadow-2xs shadow-white active:shadow-lg active:shadow-green-500" />
+                  </button>
+                  <button
+                    onClick={() => handleDelete(task.person, taskObj)}
+                    className="cursor-pointer "
+                  >
+                    <TiTrash className="todo-icon text-5xl rounded-lg active:translate-y-1 hover:text-red-700 shadow-2xs shadow-white active:shadow-lg active:shadow-red-500" />
+                  </button>
+                </div>
               </div>
-              <div>
-                <button
-                  className="px-5 cursor-pointer"
-                  onClick={() => handleComplete(task.person, taskObj)}
-                >
-                  <TiTickOutline className="todo-icon text-5xl hover:text-green-500 rounded-lg active:translate-y-1 shadow-2xs shadow-white active:shadow-lg active:shadow-green-500" />
-                </button>
-                <button
-                  onClick={() => handleDelete(task.person, taskObj)}
-                  className="cursor-pointer "
-                >
-                  <TiTrash className="todo-icon text-5xl rounded-lg active:translate-y-1 hover:text-red-700 shadow-2xs shadow-white active:shadow-lg active:shadow-red-500" />
-                </button>
-              </div>
-            </div>
-          ))}
-        
+            ))}
+          </div>
         </div>
       ))}
     </div>
