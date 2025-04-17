@@ -1,12 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useRecordsContext } from "../context/RecordsProvider";
+
 import { db } from "../firebase";
 import { arrayRemove, increment, updateDoc, doc } from "firebase/firestore";
+
 import { TiTickOutline } from "react-icons/ti";
+import { TiTimesOutline } from "react-icons/ti";
 import { TiTrash } from "react-icons/ti";
 import { RxDragHandleDots2 } from "react-icons/rx";
 import { MdRemoveRedEye } from "react-icons/md";
 import { LuEyeClosed } from "react-icons/lu";
+
 import Sortable from "sortablejs";
 
 export const Todo = () => {
@@ -32,7 +36,6 @@ export const Todo = () => {
       const docRef = doc(db, "progress", person);
       await updateDoc(docRef, {
         tasks: arrayRemove(taskObj),
-        taskCount: increment(-1),
       });
     } catch (error) {
       console.error("Error deleting task", error);
@@ -50,6 +53,18 @@ export const Todo = () => {
       console.error("Error marking task as completed", error);
     }
   };
+
+  const handleUndo = async (person, taskObj) => {
+    try{
+      const docRef = doc(db, "progress", person );
+      await updateDoc(docRef, {
+        tasks: arrayRemove(taskObj),
+        taskTotal: increment(-1),
+      })
+    } catch (error) {
+      console.error("Error removing task", error);
+    }
+  }; 
 
   const [items, setItems] = useState(records)
 
@@ -124,12 +139,15 @@ export const Todo = () => {
                 <div className="w-[25rem] task-text">
                   <p className="text-5xl font-bold todo-list">{taskObj.task}</p>
                 </div>
-                <div>
+                <div className="flex justify-between gap-2">
                   <button
-                    className="px-5 cursor-pointer"
+                    className="cursor-pointer"
                     onClick={() => handleComplete(task.person, taskObj)}
                   >
                     <TiTickOutline className="todo-icon text-5xl hover:text-green-500 rounded-lg active:translate-y-1 shadow-2xs shadow-white active:shadow-lg active:shadow-green-500" />
+                  </button>
+                  <button  onClick={() => handleUndo(task.person, taskObj)} className="cursor-pointer">
+                    <TiTimesOutline  className="todo-icon text-5xl rounded-lg active:translate-y-1 hover:text-neutral-500 shadow-2xs shadow-white active:shadow-lg active:shadow-neutral-500"/>
                   </button>
                   <button
                     onClick={() => handleDelete(task.person, taskObj)}

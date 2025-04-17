@@ -1,4 +1,3 @@
-import { Header } from "./components/Header";
 import { Form } from "./components/Form";
 import { Tracker } from "./components/Tracker";
 import { Todo } from "./components/Todo";

@@ -17,7 +17,7 @@ export const Tracker = () => {
       <div className="flex flex-row mt-10 perspective-distant tracker-main-div">
         {records.map((record) => (
           <div
-            className={`bg-[#302c2c] h-full w-full mr-10 rounded-sm skew-x-10 card ${record.person}`}
+            className={`bg-[#302c2c] h-full w-full mr-10 rounded-sm card ${record.person}`}
             key={record.id}
           >
             <img
@@ -32,7 +32,7 @@ export const Tracker = () => {
               <p className=" bg-red-600">
                 <span className="card-title">Completed %:</span>{" "}
                 <span className="number">
-                  {((record.taskCount / record.taskCount) * 100).toFixed(2)}%
+                  {((record.taskCount / record.taskTotal) * 100).toFixed(2)}%
                 </span>
               </p>
               <p className="bg-cyan-500 p-1">
@@ -41,7 +41,7 @@ export const Tracker = () => {
               </p>
               <p className="bg-indigo-600 p-1">
                 <span className="card-title">Total Task:</span>{" "}
-                <span className="number">{record.taskCount}</span>
+                <span className="number">{record.taskTotal}</span>
               </p>
             </div>
           </div>

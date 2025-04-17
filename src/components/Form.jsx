@@ -27,12 +27,14 @@ export const Form = () => {
       if (docSnap.exists()) {
         await updateDoc(docRef, {
           tasks: arrayUnion({ task }),
+          taskTotal: increment(1),
         });
       } else {
         await setDoc(docRef, {
           person,
           tasks: [{ task }],
           taskCount: 1,
+          taskTotal: 1,
         });
       }
       reset();

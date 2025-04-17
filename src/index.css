@@ -69,14 +69,38 @@ html {
 }
 
 .card {
+  position: relative;
+  overflow: hidden;
   border-radius: 0.5rem;
-  transition: transform 1s;
+  transition: transform 2s;
   transform-style: preserve-3d;
 }
 
-/* 3D tilt on hover */
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -75%;
+  width: 20%; height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%
+  );
+  transform: skewX(-30deg);
+  animation: shine 4s infinite ease-in-out;
+}
+
+/* Slide the shine overlay across */
+@keyframes shine {
+  0%   { left: -75%; }
+  100% { left: 125%; }
+}
+
+/* 3D tilt on hover */ 
 .card:hover {
-  transform: rotateY(-15deg) rotateX(-7deg);
+  transform: rotateY(-10deg) rotateZ(3deg);
+  background: linear-gradient();
 }
 
 .todo-notask{
@@ -113,11 +137,11 @@ html {
 }
 
 .dinesh {
-  @apply shadow-2xl shadow-fuchsia-400;
+  @apply shadow-2xl shadow-fuchsia-400 ring-2 ring-fuchsia-400;
 }
 
 .roshan {
-  @apply shadow-2xl shadow-white;
+  @apply shadow-2xl shadow-white ring-2 ring-white;
 }
 
 .link-title {
@@ -442,7 +466,7 @@ html {
   }
 
   .card {
-    @apply skew-0 w-[30rem] mb-16;
+    @apply w-[30rem] mb-16;
   }
 
   .card-title {
