@@ -23,7 +23,7 @@ export const Tracker = () => {
             <img
               src={`/${record.person}.png`}
               alt={`${record.person} image`}
-              className=" w-full h-[20rem] rounded-sm"
+              className="w-full h-[20rem] rounded-sm"
             />
             <div className="text-white text-4xl font-black text-center py-5 bg-indigo-900 card-heading">
               <p>{record.person.toUpperCase()}</p>
