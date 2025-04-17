@@ -27,7 +27,6 @@ export const Form = () => {
       if (docSnap.exists()) {
         await updateDoc(docRef, {
           tasks: arrayUnion({ task }),
-          taskCount: increment(1),
         });
       } else {
         await setDoc(docRef, {
