@@ -79,8 +79,10 @@ html {
 .card::after {
   content: "";
   position: absolute;
-  top: 0; left: -75%;
-  width: 20%; height: 100%;
+  top: 0; 
+  left: -75%;
+  width: 20%; 
+  height: 100%;
   background: linear-gradient(
     120deg,
     transparent 0%,
@@ -197,7 +199,7 @@ html {
   }
 
   .todo-card {
-    @apply w-full h-full mr-0;
+    @apply w-full h-full mr-0 mt-0;
   }
 
   .todo-header {
@@ -217,7 +219,7 @@ html {
   }
 
   .todo-notask{
-    @apply text-2xl mt-5 text-center ml-15;
+    @apply text-2xl mt-5 text-center ml-3;
   }
 
   .todo-list {
@@ -268,6 +270,10 @@ html {
     @apply w-full h-full;
   }
 
+  .link-style{
+    @apply text-xl
+  }
+
   .link-title {
     @apply text-2xl pt-5;
   }
@@ -277,19 +283,19 @@ html {
   }
 
   .roadmap-div {
-    @apply overflow-x-auto pl-2;
+    @apply overflow-x-auto pl-2 pb-4 pt-0;
   }
 
   .roadmap-nav {
-    @apply text-2xl pr-4;
+    @apply text-xl pr-4;
   }
 
   .roadmap-ul {
-    @apply gap-1;
+    @apply gap-1 pt-5;
   }
 
   .active-roadmap-nav {
-    @apply text-2xl;
+    @apply text-xl;
   }
 }
 
@@ -343,7 +349,7 @@ html {
   }
 
   .todo-notask{
-    @apply text-2xl  mt-5 ml-15;
+    @apply text-2xl  mt-5 ml-3;
   }
 
   .todo-list {
