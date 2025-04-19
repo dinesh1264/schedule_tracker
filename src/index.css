@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nabla&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
 
 @import "tailwindcss";
 
@@ -55,17 +54,14 @@ html {
   font-family: "Exo 2";
 }
 
-.card-heading {
-  font-family: "Stalinist One";
+.card-heading{
+  font-family: "New Rocker";
+  @apply mask-add mask-b-from-rose-300
 }
 
 .card-title {
-  font-family: "Nabla";
+  
   @apply text-3xl;
-}
-
-.number {
-  font-family: "Silkscreen";
 }
 
 .card {
@@ -102,6 +98,14 @@ html {
 /* 3D tilt on hover */ 
 .card:hover {
   transform: rotateY(-10deg) rotateZ(3deg);
+}
+
+.card-heading{
+  transform: translateY(50%);
+}
+
+.card:hover .card-heading{
+  transform: none;
 }
 
 .todo-notask{
@@ -251,11 +255,11 @@ html {
   }
 
   .card-title {
-    @apply text-[0.8rem];
+    @apply text-[1rem];
   }
 
   .number{
-    @apply text-[0.8rem]
+    @apply text-[1rem]
   }
 
   .roadmap-div {
