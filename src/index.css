@@ -95,6 +95,7 @@ html {
   100% { left: 125%; }
 }
 
+
 /* 3D tilt on hover */ 
 .card:hover {
   transform: rotateY(-10deg) rotateZ(3deg);
@@ -216,10 +217,6 @@ html {
 
   .task-text {
     @apply w-[60%];
-  }
-
-  .task-mobile{
-    @apply mt-5 h-25 overflow-auto
   }
 
   .todo-notask{

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useRecordsContext } from "../context/RecordsProvider";
 
 export const Tracker = () => {
+
   const records = useRecordsContext();
 
   useEffect(() => {}, [records]);
@@ -12,7 +13,6 @@ export const Tracker = () => {
 
   return (
     <div className="ml-30 mt-10 mr-20 tracker">
-      <h1 className="font-black text-[#00cda2] text-2xl underline decoration-[#f35b87] decoration-4"></h1>
 
       <div className="flex flex-row mt-10 perspective-distant tracker-main-div">
         {records.map((record) => (

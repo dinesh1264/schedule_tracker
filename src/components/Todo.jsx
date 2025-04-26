@@ -13,8 +13,12 @@ import { LuEyeClosed } from "react-icons/lu";
 
 import Sortable from "sortablejs";
 
+import { Alert } from "./Alert";
+
 export const Todo = () => {
-  
+  const [showModal, setShowModal] = useState(false);
+  const [type, setType] = useState("");
+
   const records = useRecordsContext();
   
   const [hide, setHide] = useState(
@@ -130,7 +134,7 @@ export const Todo = () => {
             </div>
           )}
 
-          <div className={`${hide[index] ? "hidden" : ""} mt-5 task-mobile`}>
+          <div className={`${hide[index] ? "hidden" : ""} mt-5`}>
             {task.tasks.map((taskObj, index) => (
               <div
                 key={index}
@@ -142,15 +146,43 @@ export const Todo = () => {
                 <div className="flex justify-between gap-2">
                   <button
                     className="cursor-pointer"
-                    onClick={() => handleComplete(task.person, taskObj)}
+                    onClick={() => {
+                      handleComplete(task.person, taskObj);
+                      setShowModal(true);
+                      setType("tick");
+                      setTimeout(() => {
+                        setType("");
+                        setShowModal(false);
+                      }, 4000);
+                    }}
                   >
                     <TiTickOutline className="todo-icon text-5xl hover:text-green-500 rounded-lg active:translate-y-1 shadow-2xs shadow-white active:shadow-lg active:shadow-green-500" />
                   </button>
-                  <button  onClick={() => handleUndo(task.person, taskObj)} className="cursor-pointer">
-                    <TiTimesOutline  className="todo-icon text-5xl rounded-lg active:translate-y-1 hover:text-neutral-500 shadow-2xs shadow-white active:shadow-lg active:shadow-neutral-500"/>
+
+                  <button
+                    onClick={() => {
+                      handleUndo(task.person, taskObj);
+                      setShowModal(true);
+                      setType("cross");
+                      setTimeout(() => {
+                        setType("");
+                        setShowModal(false);
+                      }, 4000);
+                    }}
+                    className="cursor-pointer"
+                  >
+                    <TiTimesOutline className="todo-icon text-5xl rounded-lg active:translate-y-1 hover:text-neutral-500 shadow-2xs shadow-white active:shadow-lg active:shadow-neutral-500" />
                   </button>
                   <button
-                    onClick={() => handleDelete(task.person, taskObj)}
+                    onClick={() => {
+                      handleDelete(task.person, taskObj);
+                      setShowModal(true);
+                      setType("delete");
+                      setTimeout(() => {
+                        setType("");
+                        setShowModal(false);
+                      }, 4000);
+                    }}
                     className="cursor-pointer "
                   >
                     <TiTrash className="todo-icon text-5xl rounded-lg active:translate-y-1 hover:text-red-700 shadow-2xs shadow-white active:shadow-lg active:shadow-red-500" />
@@ -161,6 +193,13 @@ export const Todo = () => {
           </div>
         </div>
       ))}
+      <div className="absolute bottom-25">
+        <Alert
+          show={showModal}
+          type={type}
+          onClose={() => setShowModal(false)}
+        />
+      </div>
     </div>
   );
 };

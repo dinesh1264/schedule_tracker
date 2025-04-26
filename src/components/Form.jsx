@@ -8,8 +8,12 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { db } from "../firebase";
+import { useState } from "react";
+import { Alert } from "./Alert";
 
 export const Form = () => {
+  const [showModal, setShowModal] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -37,13 +41,15 @@ export const Form = () => {
           taskTotal: 1,
         });
       }
+      setShowModal(true);
+      setTimeout(() => setShowModal(false), 3000)
       reset();
     } catch (error) {
       console.error("Error adding document", error);
     }
   };
 
-  console.log(errors);
+  
 
   return (
     <div className="mt-30 flex justify-center-safe relative form-div">
@@ -108,6 +114,13 @@ export const Form = () => {
           </div>
         </fieldset>
       </form>
+      <div className="absolute top-14">
+        <Alert
+          show={showModal}
+          type={"submit"}
+          onClose={() => setShowModal(false)}
+        />
+      </div>
     </div>
   );
 };
